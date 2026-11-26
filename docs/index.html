@@ -15,20 +15,22 @@
 <header><div><strong>CSV订单核对工具</strong><a href="#scope">先确认是否适用</a></div></header>
 <main>
 <section class="intro" aria-labelledby="headline">
-<div><p class="kicker">两张表，一次对照</p><h1 id="headline">找出漏单、金额差异<br>和重复订单。</h1><p class="muted">将订单表与收款流水导出为CSV，按订单号逐组核对。完整工具在本机浏览器处理文件，无需上传账单。</p><div class="actions"><a class="button" href="#inquiry">反馈示例与适用范围</a><a class="button secondary" href="#sample">查看示例结果</a></div><p class="note">这是使用虚构数据的交互演示。</p></div>
+<div><p class="kicker">两张表，一次对照</p><h1 id="headline">找出漏单、金额差异<br>和重复订单。</h1><p class="muted">将订单表与收款流水导出为CSV，按订单号逐组核对。完整工具在本机浏览器处理文件，无需上传账单。</p><div class="actions"><a class="button" href="#service">查看表格服务</a><a class="button secondary" href="#sample">查看示例结果</a></div><p class="note">这是使用虚构数据的交互演示。</p></div>
 <div class="sample" id="sample"><div class="sampletop"><strong>核对结果示例</strong><span>全部为虚构数据</span></div><div class="numbers"><div><b>5</b>订单组</div><div><b>4</b>需要复核</div><div><b>1</b>金额一致</div></div><div class="samplebody"><label class="filter"><input id="only-diff" type="checkbox" checked>只看需要复核的订单</label><div class="tablewrap"><table><caption style="text-align:left;color:#536176;font-size:14px;margin-bottom:8px">固定示例用于展示分类，页面不读取文件</caption><thead><tr><th scope="col">订单号</th><th scope="col">左侧金额</th><th scope="col">右侧金额</th><th scope="col">结果</th></tr></thead><tbody><tr><td>001002</td><td>80.00</td><td>88.00</td><td><span class="badge">金额不同</span></td></tr><tr><td>001003</td><td>30.00</td><td>—</td><td><span class="badge">仅左侧</span></td></tr><tr><td>001004</td><td>10.00 / 10.00</td><td>10.00</td><td><span class="badge">重复订单号</span></td></tr><tr><td>001005</td><td>缺失</td><td>20.00</td><td><span class="badge">无效金额</span></td></tr><tr id="equal-row" hidden><td>001001</td><td>100.10</td><td>100.1</td><td><span class="badge ok">金额一致</span></td></tr></tbody></table></div><p class="samplefoot">重复订单完整保留供人工判断；缺失金额不按零处理。</p></div></div>
 </section>
 <section class="section" aria-labelledby="features"><h2 id="features">让差异有据可查</h2><div class="features"><div><h3>订单号保留原样</h3><p>不转数字、不去空格。前导零与长订单号按原始文本匹配，避免误合并。</p></div><div><h3>金额精确到分</h3><p>合法金额按整数分值比较。支持零和负数；格式错误明确列出，不猜测、不四舍五入。</p></div><div><h3>差异一次导出</h3><p>完整工具可导出全部差异CSV，保留原始行号及重复记录，方便人工复核。</p></div></div></section>
 <section class="section boundary" id="scope" aria-labelledby="scope-title"><div><h2 id="scope-title">适用范围</h2><ul><li>带表头的UTF-8、逗号分隔CSV。</li><li>每份最多10MiB、50,000条记录。</li><li>两侧自行指定订单号与金额列。</li><li>两表币种、金额单位与业务口径一致。</li></ul></div><div><h2>使用前请确认</h2><ul><li>不直接读取Excel文件或GBK编码。</li><li>不自动合单、换汇、分账或抵销退款。</li><li>发现差异不代表哪一侧正确，仍需人工复核。</li><li>Excel导入结果时将订单号列设为文本。</li></ul><p class="note">已通过35项离线功能检查。真实浏览器视觉、实际文件保存、Excel实机及跨浏览器兼容性尚未验证。</p></div></section>
 <section class="section" id="inquiry" aria-labelledby="inquiry-title"><div class="inquiry"><h2 id="inquiry-title">先用文字描述你的两张表</h2><p>通过 GitHub 反馈示例结果或提出功能建议。入口需要GitHub账号，讨论内容公开可见。</p><ol><li>说明两份表各来自哪里，以及用于匹配的列名。</li><li>提供大致行数、文件编码和希望发现的差异。</li><li>只用虚构例子，勿提交真实账单、客户信息或银行卡资料。</li></ol><a class="button" href="https://github.com/wjqcluke/csv-order-check-demo/issues">打开项目 Issues</a><p class="note" style="margin:16px 0 0">反馈可包含可复现的虚构例子。</p></div><p class="disclosure">本页仅展示虚构结果，不处理访客文件，也不含付款、上传或自动回复功能。</p></section>
-<section class="section" aria-labelledby="service-title">
+<section class="section" id="service" aria-labelledby="service-title">
   <div class="inquiry">
-    <h2 id="service-title">只需要给一张小表去重？</h2>
+    <h2 id="service-title">在闲鱼咨询表格整理</h2>
     <p>闲鱼小表去重服务为 ¥29.90。可处理一个 Excel 工作表或一份 CSV，最多 500 行、10 列。交付整理结果、重复记录清单和处理说明。</p>
-    <a class="button" href="https://www.goofish.com/item?id=1098388396207">在闲鱼查看表格去重服务</a>
-    <p class="note" style="margin:16px 0 0">这个服务按约定字段给单表去重。两表订单核对需求可通过上方项目入口反馈。</p>
+    <a class="button" href="https://www.goofish.com/item?id=1098388396207">查看 ¥29.90 小表去重</a>
+    <p class="note">需要统一日期或金额格式、整理异常并做基础汇总，可查看 ¥199 表格整理服务。基础范围为一张表，最多 3,000 行、20 列。</p>
+    <a class="button secondary" href="https://www.goofish.com/item?id=1094370878064">查看 ¥199 表格整理</a>
+    <p class="note" style="margin:16px 0 0">两个服务均按单表范围交付，价格和接单状态以闲鱼页面为准。两表订单核对可以提交虚构示例反馈。</p>
   </div>
 </section>
-</main><footer>CSV订单核对工具 · 原创样品 · 页面更新于2026-11-25</footer>
+</main><footer>CSV订单核对工具 · 原创样品 · 页面更新于2026-11-26</footer>
 <script>document.getElementById('only-diff').addEventListener('change',function(){document.getElementById('equal-row').hidden=this.checked;});</script>
 </body></html>
