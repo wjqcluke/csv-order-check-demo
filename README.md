@@ -1,5 +1,7 @@
 # CSV订单核对样品
 
+[English portfolio sample](README.en.md)
+
 [查看已发布的工具介绍和固定虚构示例](https://csv-order-check-luke.wjqcluke.chatgpt.site)。介绍页没有上传或收款功能。
 
 原创离线CSV订单核对工具的虚构示例与需求入口。当前样品阶段，尚未收款或成交，不提供生产财务审计保证。
